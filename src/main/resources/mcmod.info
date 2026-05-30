@@ -1,0 +1,16 @@
+[
+{
+  "modid": "togglesprint",
+  "name": "ToggleSprint",
+  "description": "Definitely a toggle sprint mod.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["seeker"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
