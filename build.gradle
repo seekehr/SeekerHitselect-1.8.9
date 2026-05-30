@@ -21,8 +21,8 @@ plugins {
 }
 */
 version = "1.0"
-group= "com.seeker.ab"
-archivesBaseName = "togglesprint"
+group= "com.seeker.hs"
+archivesBaseName = "hitselect"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

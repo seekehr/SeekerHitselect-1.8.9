@@ -1,8 +1,8 @@
 [
 {
-  "modid": "togglesprint",
-  "name": "ToggleSprint",
-  "description": "Definitely a toggle sprint mod.",
+  "modid": "hitselect",
+  "name": "HitSelect",
+  "description": "Combo-timing assist: force-stops your attacks while airborne and releases on landing so your own ground hit starts the combo. Chance-gated.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",

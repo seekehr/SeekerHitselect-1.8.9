@@ -1,6 +1,7 @@
-package com.seeker.ab.render;
+package com.seeker.hs.render;
 
-import com.seeker.ab.Main;
+import com.seeker.hs.Main;
+import com.seeker.hs.module.HitSelect;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.EnumChatFormatting;
@@ -25,15 +26,23 @@ public class HudRenderer {
         if (!visible) return;
         if (mc.thePlayer == null || mc.gameSettings.showDebugInfo) return;
 
+        HitSelect hs = Main.hitSelect;
+        if (hs == null) return;
+
         FontRenderer fr = mc.fontRendererObj;
-        boolean on      = Main.autoBlock.isEnabled();
-        boolean blocking = Main.autoBlock.isBlocking();
 
-        String color = blocking ? EnumChatFormatting.YELLOW.toString()
-                     : on      ? EnumChatFormatting.GREEN.toString()
-                                : EnumChatFormatting.RED.toString();
-        String state = blocking ? "[BLOCK]" : on ? "ON" : "OFF";
+        String color = !hs.isEnabled()  ? EnumChatFormatting.RED.toString()
+                     : hs.isSelecting() ? EnumChatFormatting.YELLOW.toString()
+                                        : EnumChatFormatting.GREEN.toString();
 
-        fr.drawStringWithShadow("AB: " + color + state, 2, 2, 0xFFFFFF);
+        int lo = (int) Math.round(hs.getChanceMin() * 100);
+        int hi = (int) Math.round(hs.getChanceMax() * 100);
+        String band = lo == hi ? lo + "%" : lo + "-" + hi + "%";
+
+        String title  = "HitSelect " + color + "[" + hs.getStateLabel() + "]";
+        String chance = EnumChatFormatting.GRAY + "Chance: " + EnumChatFormatting.WHITE + band;
+
+        fr.drawStringWithShadow(title, 2, 2, 0xFFFFFF);
+        fr.drawStringWithShadow(chance, 2, 12, 0xFFFFFF);
     }
 }
