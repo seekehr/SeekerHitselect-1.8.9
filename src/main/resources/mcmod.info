@@ -1,8 +1,8 @@
 [
 {
-  "modid": "hitselect",
-  "name": "HitSelect",
-  "description": "Combo-timing assist: force-stops your attacks while airborne and releases on landing so your own ground hit starts the combo. Chance-gated.",
+  "modid": "togglesneak",
+  "name": "ToggleSneak",
+  "description": "Definitely a toggle sneak mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",

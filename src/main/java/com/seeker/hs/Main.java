@@ -12,9 +12,9 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 @Mod(modid = Main.MODID, version = Main.VERSION, name = Main.NAME, clientSideOnly = true)
 public class Main {
 
-    public static final String MODID   = "hitselect";
+    public static final String MODID   = "togglesneak";
     public static final String VERSION = "1.0";
-    public static final String NAME    = "HitSelect";
+    public static final String NAME    = "ToggleSneak";
 
     public static HitSelect   hitSelect;
     public static HudRenderer hud;
